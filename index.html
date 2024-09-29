@@ -98,6 +98,8 @@
 
                 if (attempts === 1) {
                     setConfusingMessage();
+                } else if (attempts >= 2) {
+                    setNuclearThreat();
                 }
             }
         }
@@ -108,7 +110,13 @@
             errorMessage.style.color = 'yellow';
             errorMessage.style.animation = 'flicker 1s infinite alternate';
         }
+
+        function setNuclearThreat() {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.innerHTML += '<br>💣 Ydinase on laukaisemassa... Sijainti: [KOODI]. Kaikki valmiina!';
+            errorMessage.style.color = 'red';
+            errorMessage.style.animation = 'shake 0.5s infinite alternate'; // Voit lisätä animaation
+        }
     </script>
 </body>
 </html>
-
