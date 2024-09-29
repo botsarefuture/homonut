@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salasanasuojattu Sivu</title>
+    <title>Pähkinäryhmä - Hämmentävää ja Seksikästä</title>
     <style>
         body {
-            background-color: black;
-            color: #00ff00; /* Vihreä väri */
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #000; /* Musta tausta */
+            color: #ff69b4; /* Vaaleanpunainen väri */
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -16,106 +16,55 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            animation: flicker 3s infinite;
+            animation: pulse 2s infinite;
         }
         h1 {
-            font-size: 2.5em;
-            text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+            font-size: 4em;
+            text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff1493;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
         }
-        .input-line {
-            margin-top: 20px;
+        h1:hover {
+            transform: scale(1.1);
         }
-        .input-line input {
-            padding: 10px;
-            font-size: 1.2em;
-            border: 1px solid #00ff00;
-            background: black;
-            color: #00ff00;
-        }
-        .input-line button {
-            padding: 10px 15px;
-            font-size: 1.2em;
-            color: black;
-            background-color: #00ff00;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .input-line button:hover {
-            background-color: #00cc00;
-        }
-        .error {
-            margin-top: 20px;
-            color: red;
+        p {
             font-size: 1.5em;
-            display: none;
+            margin: 20px 0;
+            opacity: 0.8;
+            animation: flicker 1s infinite;
         }
-        .secret-message {
+        .mysterious {
             display: none;
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #00ff00;
+            font-size: 2em;
+            color: #fff;
+            margin-top: 30px;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
         }
         @keyframes flicker {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
         }
     </style>
 </head>
 <body>
-    <audio id="backgroundMusic" loop>
-        <source src="your-sound-file.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <h1>Salasanasuojattu Sivu</h1>
-    <div class="input-line">
-        <input type="password" id="passwordInput" placeholder="Syötä salasana...">
-        <button onclick="checkPassword()">Syötä</button>
+    <h1>Pähkinäryhmä</h1>
+    <p>Hämmennys ja viettelys yhdistyvät, kun astut tähän maailmaan!</p>
+    <p>Oletko valmis? Yksi napsaus voi avata oven...</p>
+    
+    <button onclick="revealMystery()">Paljasta salaisuus</button>
+
+    <div class="mysterious" id="mysteryText">
+        💖 Salaisuus: "Rakkaus on pähkinä, joka odottaa kuorimista..." 💖
     </div>
-    <div class="error" id="errorMessage">Virheellinen salasana! Yritä uudelleen.</div>
-    <div class="secret-message" id="secretMessage">Tervetuloa! Olet päässyt sisään. Salaisuus paljastuu... 🤫</div>
 
     <script>
-        const correctPassword = 'pähkinä123'; // Oikea salasana
-        let attempts = 0; // Yritettävien lukumäärä
-
-        // Aloitetaan musiikki
-        document.getElementById('backgroundMusic').play();
-
-        function checkPassword() {
-            const passwordInput = document.getElementById('passwordInput');
-            const errorMessage = document.getElementById('errorMessage');
-            const secretMessage = document.getElementById('secretMessage');
-
-            if (passwordInput.value === correctPassword) {
-                secretMessage.style.display = 'block';
-                errorMessage.style.display = 'none';
-            } else {
-                attempts++;
-                passwordInput.value = ''; // Tyhjennetään syötekenttä
-                errorMessage.style.display = 'block';
-
-                if (attempts === 1) {
-                    setConfusingMessage();
-                } else if (attempts >= 2) {
-                    setNuclearThreat();
-                }
-            }
-        }
-
-        function setConfusingMessage() {
-            const errorMessage = document.getElementById('errorMessage');
-            errorMessage.innerHTML += '<br>⚠️ Koodi on väärä! Salaliitto on herännyt! Vaaran merkkejä havaittu...';
-            errorMessage.style.color = 'yellow';
-            errorMessage.style.animation = 'flicker 1s infinite alternate';
-        }
-
-        function setNuclearThreat() {
-            const errorMessage = document.getElementById('errorMessage');
-            errorMessage.innerHTML += '<br>💣 Ydinase on laukaisemassa... Sijainti: [KOODI]. Kaikki valmiina!';
-            errorMessage.style.color = 'red';
-            errorMessage.style.animation = 'shake 0.5s infinite alternate'; // Voit lisätä animaation
+        function revealMystery() {
+            const mysteryText = document.getElementById('mysteryText');
+            mysteryText.style.display = 'block';
         }
     </script>
 </body>
