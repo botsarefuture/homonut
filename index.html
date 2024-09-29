@@ -9,10 +9,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background-color: #ffcccb;
+            font-family: 'Georgia', serif;
             text-align: center;
+            color: #330000;
         }
         #image {
             display: none;
@@ -21,6 +23,15 @@
         #telegramLink {
             display: none;
             margin-top: 20px;
+        }
+        .vibe-animation {
+            font-size: 40px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
@@ -32,6 +43,7 @@
         <input type="number" id="ageInput" placeholder="Ikä" min="0">
         <button onclick="checkAge()">Tarkista</button>
 
+        <div id="animation" class="vibe-animation">O============3</div>
         <img id="image" src="" alt="Ikäkuva">
         <div id="telegramLink"></div>
     </div>
@@ -41,17 +53,21 @@
             const age = document.getElementById('ageInput').value;
             const image = document.getElementById('image');
             const telegramLink = document.getElementById('telegramLink');
+            const animation = document.getElementById('animation');
 
             if (age < 13) {
                 image.src = 'pic13.jpg'; // kuva alle 13-vuotiaille
                 image.alt = 'Et saa käyttää tätä sivustoa.';
                 telegramLink.innerHTML = '';
+                animation.style.display = 'none';
             } else if (age >= 13 && age < 18) {
                 image.src = 'verson.png'; // kuva 13-17-vuotiaille
                 image.alt = 'Tervetuloa nuoremmat käyttäjät!';
                 telegramLink.innerHTML = '<a href="https://t.me/joinchat/YourSecretLinkHere" target="_blank">Liity Telegram-kanavalle</a>';
+                animation.style.display = 'block';
             } else {
                 telegramLink.innerHTML = '<a href="https://t.me/joinchat/YourSecretLinkHere" target="_blank">Liity Telegram-kanavalle</a>';
+                animation.style.display = 'block';
             }
 
             image.style.display = 'block';
