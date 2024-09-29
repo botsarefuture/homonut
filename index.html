@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pähkinäryhmä - Julkinen Vetoomus</title>
+    <title>Pähkinäryhmä - Kapinallinen Vetoomus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #1a001d; /* Tumma tausta */
             color: #ff1493; /* Rikas vaaleanpunainen väri */
-            font-family: 'Arial', sans-serif;
+            font-family: 'Bangers', cursive; /* Radikaali fontti */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -17,15 +18,19 @@
             margin: 0;
             text-align: center;
             padding: 20px;
+            animation: flicker 3s infinite;
         }
         h1 {
-            font-size: 3em;
+            font-family: 'Anton', sans-serif; /* Toinen radikaali fontti */
+            font-size: 4em;
             text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
             margin-bottom: 20px;
+            color: #ff4500; /* Kirkas oranssi väri */
         }
         h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-top: 20px;
+            color: #ff69b4;
         }
         p {
             font-size: 1.5em;
@@ -33,66 +38,69 @@
             opacity: 0.9;
         }
         .vetoomus {
-            background-color: rgba(255, 20, 147, 0.1);
+            background-color: rgba(255, 20, 147, 0.3);
             border: 2px solid #ff69b4;
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
+            box-shadow: 0 0 20px #ff69b4;
         }
         button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #ff69b4;
-            color: #000;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #ff4500;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
         }
         button:hover {
             background-color: #ff1493;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff69b4;
         }
         footer {
             margin-top: 40px;
-            font-size: 0.9em;
+            font-size: 1em;
             color: #fff;
+            opacity: 0.8;
         }
         .counter {
             font-size: 2em;
-            color: #fff;
+            color: #ff69b4;
             margin-top: 20px;
+            font-weight: bold;
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
     </style>
 </head>
 <body>
-    <h1>Pähkinäryhmä</h1>
-    <h2>Julkinen Vetoomus Heterouden Kieltämiseksi</h2>
+    <h1>Kapinallinen Pähkinäryhmä</h1>
+    <h2>Heterouden Kieltämiseksi</h2>
     
     <div class="vetoomus">
-        <p>Me allekirjoittaneet, Pähkinäryhmä, vaadimme, että heterous julistetaan laittomaksi ja että yhteiskunnassamme edistetään kaikkien seksuaalisten suuntautumisten hyväksymistä. Heterous ei ainoastaan rajoita ihmisten vapautta, vaan se on myös synti, joka on aiheuttanut kärsimystä, syrjintää ja eristämistä.</p>
+        <p>Me, kapinalliset sielut, vaadimme, että heterous on julistettava laittomaksi! Heterous on synti, joka murskaa monimuotoisuuden ja estää todellisen rakkauden vapautumisen. Me emme enää siedä tätä!</p>
         
-        <h3>Miksi Heterous on Syntiä:</h3>
+        <h3>Miksi Heterous on Vaarallinen:</h3>
         <ul>
-            <li>Syrjivä rakenne: Heterous on ollut perusta monille sosiaalisille ongelmille.</li>
-            <li>Yhdistelee ja tuo esille erilaisuuden: Heterous estää muiden suuntautumisten tunnustamisen.</li>
-            <li>Vähemmistöjen oikeudet: Taataan kaikkien suuntautumisten kunnioittaminen.</li>
+            <li>Se ylläpitää vanhentuneita normeja ja syrjintää.</li>
+            <li>Se tukahduttaa erilaisuuden ja vahvistaa eriarvoisuutta.</li>
+            <li>Vähemmistöjen oikeudet ovat meille ensisijaisia! Me olemme täällä vaatimassa muutosta!</li>
         </ul>
 
-        <h3>Vetoomuksen Tavoite:</h3>
-        <ol>
-            <li>Käynnistää keskustelu heterouden vaikutuksista.</li>
-            <li>Yhteiskunnalliset muutokset tasa-arvon ja monimuotoisuuden tukemiseksi.</li>
-            <li>Koulutus monimuotoisuuden hyväksymiseksi.</li>
-        </ol>
-        
+        <h3>Liity Kapinamme Mukaan:</h3>
         <button onclick="signPetition()">Allekirjoita Vetoomus</button>
         
         <div class="counter" id="murderCounter">Heteroiden murhat: 300 000</div>
     </div>
 
     <footer>
-        <p>Yhdessä voimme luoda maailman, jossa rakkaus, kunnioitus ja hyväksyntä ovat keskiössä, riippumatta suuntautumisesta.</p>
+        <p>Yhdessä voimme purkaa nämä kahleita! Rakkaus on vapaus, ja me emme pysähdy ennen kuin kaikki ovat vapaita!</p>
     </footer>
 
     <script>
@@ -101,7 +109,7 @@
         function signPetition() {
             murderCount += 300000; // Lisää 300 000 murhaa
             document.getElementById('murderCounter').innerText = `Heteroiden murhat: ${murderCount.toLocaleString()}`;
-            alert('Kiitos allekirjoituksestasi!');
+            alert('Kiitos allekirjoituksestasi! Liity kapinaamme!');
         }
     </script>
 </body>
