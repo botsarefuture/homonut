@@ -110,11 +110,11 @@
             // Simuloidaan eri vastauksia
             const userResponse = Math.random() < 0.5 ? 'K' : 'Y';
             if (userResponse === 'K') {
-                responseDiv.innerHTML = '<span>&gt; Yhteys palautettu...</span><br>' +
+                terminal.innerHTML = '<span>&gt; Yhteys palautettu...</span><br>' +
                                         '<span>&gt; Toimenpiteet keskeytetty. Onko tämä vain aluksi?</span>';
                 terminal.innerHTML += '<br><span>&gt; Jatka (K/Y)?</span>';
             } else {
-                responseDiv.innerHTML = '<span>&gt; Yhteys katkaistu...</span><br>' +
+                terminal.innerHTML = '<span>&gt; Yhteys katkaistu...</span><br>' +
                                         '<span>&gt; Häiriö! Virheellinen komento. Pelasta itsesi!</span>';
             }
         };
