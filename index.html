@@ -43,10 +43,11 @@
             text-shadow: 0 0 10px #ff69b4; /* Tehostettu varjo */
         }
         .hashtag {
-            font-size: 2em;
+            font-size: 3em;
             color: #ff69b4;
-            margin-top: 20px;
-            text-shadow: 0 0 15px #fff; /* Vaalean varjo */
+            margin-top: 30px;
+            text-shadow: 0 0 25px #ff1493, 0 0 40px #ff69b4; /* Vaikutusvarjot */
+            animation: pulse 1.5s infinite; /* Animaatio hashtagin ympärille */
         }
         .mysterious {
             display: none;
@@ -76,6 +77,10 @@
             50% { opacity: 1; }
             100% { opacity: 0.9; }
         }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); } /* Pulssi-efekti hashtagin ympärille */
+        }
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em; /* Pienempi fontti mobiilissa */
@@ -89,6 +94,9 @@
             button {
                 padding: 10px 20px; /* Pienempi nappi mobiilissa */
             }
+            .hashtag {
+                font-size: 2.5em; /* Pienempi fontti hashtagin mobiilissa */
+            }
         }
     </style>
 </head>
@@ -98,7 +106,7 @@
     <p>Astutko sisään, jossa hämmennys kohtaa viettelyn?</p>
     <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
     
-    <div class="hashtag">#HeterotAlas</div> <!-- Lisätty hashtag -->
+    <div class="hashtag">#HeterotAlas</div> <!-- Vaikuttava hashtag -->
 
     <button onclick="revealMystery()">Paljasta salaisuus</button>
 
