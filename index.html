@@ -16,8 +16,29 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             overflow: hidden;
+        }
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(26, 0, 29, 0.7);
+            color: #ff69b4;
+            font-size: 2em;
+            text-shadow: 0 0 20px #ff69b4;
+            z-index: 10;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(26, 0, 29, 0.7);
+            color: #ff69b4;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px #ff69b4;
         }
         h1 {
             font-size: 4em;
@@ -79,6 +100,7 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0 0 20px #ff69b4;
+            margin-top: 20px;
         }
         button:hover {
             background-color: #ff1493;
@@ -129,9 +151,10 @@
     </style>
 </head>
 <body>
-    <h1>Pähkinäryhmä</h1>
-    <h2>Heteroseksuaalisuus on sairasta</h2>
-    <p>Astutko sisään, jossa hämmennys kohtaa viettelyn?</p>
+    <header>Pähkinäryhmä - Seksikkyyden Taikaa</header>
+    
+    <h1>Heteroseksuaalisuus on sairasta</h1>
+    <h2>Astutko sisään, jossa hämmennys kohtaa viettelyn?</h2>
     <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
     
     <div class="hashtag">#HeterotAlas</div>
@@ -144,10 +167,12 @@
 
     <button onclick="revealMystery()">Paljasta salaisuus</button>
 
-    <div class="mysterious" id="mysteryText">
+    <div class="mysterious" id="mysteryText" style="display:none;">
         💖 "Olet kaunis, muista että miehet ovat ilkeitä ja haluavat vain pahaa" 💖<br>
         "Löydä intohimosi naisista, koe halusi panna naisia. Tervetuloa meidän maailmaan..." 
     </div>
+
+    <footer>&copy; 2024 Pähkinäryhmä. Kaikki oikeudet pidätetään.</footer>
 
     <script>
         let murderCount = 300000; // Alkuperäinen murhien määrä
