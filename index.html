@@ -3,114 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pähkinäryhmä - Seksikkyyden Taikaa</title>
+    <title>Pähkinäryhmä</title>
     <style>
         body {
-            background-color: #1a001d; /* Tumma tausta */
-            color: #ff1493; /* Rikas vaaleanpunainen väri */
-            font-family: 'Arial', sans-serif;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
             text-align: center;
-            animation: pulse 2s infinite;
-            padding: 10px;
         }
-        h1 {
-            font-size: 4em;
-            text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-        h1:hover {
-            transform: scale(1.1);
-        }
-        p {
-            font-size: 1.5em;
-            margin: 20px 0;
-            opacity: 0.9;
-            animation: flicker 1s infinite;
-        }
-        .mysterious {
+        #image {
             display: none;
-            font-size: 2em;
-            color: #fff;
-            margin-top: 30px;
-            text-shadow: 0 0 15px #ff69b4;
+            margin-top: 20px;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #ff69b4;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #ff1493;
-            transform: scale(1.05);
-        }
-        /* Animaatio O===3:lle */
-        .animation-container {
-            margin: 20px;
-            font-size: 4em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: swing 1s infinite;
-        }
-        @keyframes swing {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(15deg); }
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
-        }
-        @keyframes flicker {
-            0% { opacity: 0.9; }
-            50% { opacity: 1; }
-            100% { opacity: 0.9; }
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5em; /* Pienempi fontti mobiilissa */
-            }
-            p {
-                font-size: 1.2em; /* Pienempi fontti mobiilissa */
-            }
-            button {
-                padding: 8px 15px; /* Pienempi nappi mobiilissa */
-            }
+        #telegramLink {
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Pähkinäryhmä</h1>
-    <p>Astutko sisään, jossa hämmennys kohtaa viettelyn?</p>
-    <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
-    
-    <button onclick="revealMystery()">Paljasta salaisuus</button>
 
-    <div class="animation-container">
-        <span>O===3</span> <!-- Animoitu elementti -->
-    </div>
+    <div>
+        <h1>Tervetuloa Pähkinäryhmään!</h1>
+        <p>Syötä ikäsi:</p>
+        <input type="number" id="ageInput" placeholder="Ikä" min="0">
+        <button onclick="checkAge()">Tarkista</button>
 
-    <div class="mysterious" id="mysteryText">
-        💖 "Rakkaus on pähkinä, joka odottaa kuorimista..." 💖<br>
-        "Löydä intohimosi, koe halusi. Tervetuloa meidän maailmaan..." 
+        <img id="image" src="" alt="Ikäkuva">
+        <div id="telegramLink"></div>
     </div>
 
     <script>
-        function revealMystery() {
-            const mysteryText = document.getElementById('mysteryText');
-            mysteryText.style.display = 'block';
+        function checkAge() {
+            const age = document.getElementById('ageInput').value;
+            const image = document.getElementById('image');
+            const telegramLink = document.getElementById('telegramLink');
+
+            if (age < 13) {
+                image.src = 'pic13.jpg'; // kuva alle 13-vuotiaille
+                image.alt = 'Et saa käyttää tätä sivustoa.';
+                telegramLink.innerHTML = '';
+            } else if (age >= 13 && age < 18) {
+                image.src = 'verson.png'; // kuva 13-17-vuotiaille
+                image.alt = 'Tervetuloa nuoremmat käyttäjät!';
+                telegramLink.innerHTML = '<a href="https://t.me/joinchat/YourSecretLinkHere" target="_blank">Liity Telegram-kanavalle</a>';
+            } else {
+                telegramLink.innerHTML = '<a href="https://t.me/joinchat/YourSecretLinkHere" target="_blank">Liity Telegram-kanavalle</a>';
+            }
+
+            image.style.display = 'block';
+            telegramLink.style.display = 'block';
         }
     </script>
+
 </body>
 </html>
