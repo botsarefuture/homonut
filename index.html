@@ -42,6 +42,12 @@
             animation: flicker 1s infinite;
             text-shadow: 0 0 10px #ff69b4; /* Tehostettu varjo */
         }
+        .hashtag {
+            font-size: 2em;
+            color: #ff69b4;
+            margin-top: 20px;
+            text-shadow: 0 0 15px #fff; /* Vaalean varjo */
+        }
         .mysterious {
             display: none;
             font-size: 2em;
@@ -92,6 +98,8 @@
     <p>Astutko sisään, jossa hämmennys kohtaa viettelyn?</p>
     <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
     
+    <div class="hashtag">#HeterotAlas</div> <!-- Lisätty hashtag -->
+
     <button onclick="revealMystery()">Paljasta salaisuus</button>
 
     <div class="mysterious" id="mysteryText">
