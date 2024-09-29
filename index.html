@@ -51,6 +51,19 @@
             margin-left: auto;
             margin-right: auto;
         }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #00ff00;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #008800;
+        }
         @keyframes flicker {
             0% { opacity: 0.9; }
             50% { opacity: 1; }
@@ -72,7 +85,7 @@
         <p>Olet nyt salaisella alueella, josta et olisi koskaan pitänyt löytää.</p>
         <p>Tiedot ja turvallisuus ovat uhattuina. Ole varovainen, mitä teet seuraavaksi.</p>
         <div class="warning">VAROITUS: Järjestelmä on murrettu!</div>
-        <div class="terminal">
+        <div class="terminal" id="terminal">
             <span>&gt; Tervetuloa tuntemattomaan järjestelmään...</span><br>
             <span>&gt; Yhteys muodostettu: {IP}</span><br>
             <span>&gt; Hakkerointiprosessi aloitettu...</span><br>
@@ -85,6 +98,26 @@
             <span>&gt; Yritä palauttaa yhteys.</span><br>
             <span>&gt; Jatka (K/Y)?</span>
         </div>
+        <button id="responseButton">Vastaa</button>
+        <div id="response" style="display: none; margin-top: 20px; color: yellow;"></div>
     </div>
+    <script>
+        document.getElementById('responseButton').onclick = function() {
+            const responseDiv = document.getElementById('response');
+            const terminal = document.getElementById('terminal');
+            responseDiv.style.display = 'block';
+
+            // Simuloidaan eri vastauksia
+            const userResponse = Math.random() < 0.5 ? 'K' : 'Y';
+            if (userResponse === 'K') {
+                responseDiv.innerHTML = '<span>&gt; Yhteys palautettu...</span><br>' +
+                                        '<span>&gt; Toimenpiteet keskeytetty. Onko tämä vain aluksi?</span>';
+                terminal.innerHTML += '<br><span>&gt; Jatka (K/Y)?</span>';
+            } else {
+                responseDiv.innerHTML = '<span>&gt; Yhteys katkaistu...</span><br>' +
+                                        '<span>&gt; Häiriö! Virheellinen komento. Pelasta itsesi!</span>';
+            }
+        };
+    </script>
 </body>
 </html>
