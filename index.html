@@ -49,6 +49,13 @@
             text-shadow: 0 0 25px #ff1493, 0 0 40px #ff69b4; /* Vaikutusvarjot */
             animation: pulse 1.5s infinite; /* Animaatio hashtagin ympärille */
         }
+        .women-message {
+            font-size: 2.5em;
+            color: #fff;
+            margin-top: 20px;
+            text-shadow: 0 0 20px #ff69b4; /* Tehostettu varjo */
+            animation: fade-in 2s; /* Fade-in animaatio */
+        }
         .mysterious {
             display: none;
             font-size: 2em;
@@ -81,6 +88,10 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); } /* Pulssi-efekti hashtagin ympärille */
         }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         @media (max-width: 600px) {
             h1 {
                 font-size: 2.5em; /* Pienempi fontti mobiilissa */
@@ -97,6 +108,9 @@
             .hashtag {
                 font-size: 2.5em; /* Pienempi fontti hashtagin mobiilissa */
             }
+            .women-message {
+                font-size: 2em; /* Pienempi fontti naisviestille mobiilissa */
+            }
         }
     </style>
 </head>
@@ -107,6 +121,8 @@
     <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
     
     <div class="hashtag">#HeterotAlas</div> <!-- Vaikuttava hashtag -->
+    
+    <div class="women-message">Naiset ovat vain naisia varten.</div> <!-- Naisviesti -->
 
     <button onclick="revealMystery()">Paljasta salaisuus</button>
 
