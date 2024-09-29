@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pähkinäryhmä - Häiriö</title>
+    <title>Pähkinäryhmä - Salaisuudet</title>
     <style>
         body {
             margin: 0;
@@ -20,7 +20,7 @@
             overflow: hidden;
         }
         h1 {
-            font-size: 6em;
+            font-size: 5em;
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
             animation: flicker 1.5s infinite alternate;
         }
@@ -37,6 +37,20 @@
             animation: pulse 2s infinite alternate;
             margin-top: 30px;
         }
+        .terminal {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            padding: 20px;
+            margin-top: 30px;
+            white-space: pre;
+            overflow: hidden;
+            animation: fadeIn 3s;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         @keyframes flicker {
             0% { opacity: 0.9; }
             50% { opacity: 1; }
@@ -50,33 +64,26 @@
             0% { transform: scale(1); }
             100% { transform: scale(1.1); }
         }
-        .terminal {
-            font-family: 'Courier New', Courier, monospace;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #00ff00;
-            padding: 20px;
-            margin-top: 30px;
-            white-space: pre;
-            overflow: hidden;
-            animation: fadeIn 3s;
-        }
     </style>
 </head>
 <body>
     <div>
         <h1>HUPS!</h1>
-        <p>Et ole täällä oikein.</p>
-        <p>Olet tullut salaisuuksiimme, ja on jo liian myöhäistä paeta.</p>
-        <div class="warning">VAROITUS: Tietosi ovat vaarassa!</div>
+        <p>Olet nyt salaisella alueella, josta et olisi koskaan pitänyt löytää.</p>
+        <p>Tiedot ja turvallisuus ovat uhattuina. Ole varovainen, mitä teet seuraavaksi.</p>
+        <div class="warning">VAROITUS: Järjestelmä on murrettu!</div>
         <div class="terminal">
-            <span>&gt; Yhteys keskeytetty...</span><br>
-            <span>&gt; Hakkerointi aloitettu...</span><br>
-            <span>&gt; Tuhoamiskoodit: {IP}  127.0.0.1</span><br>
+            <span>&gt; Tervetuloa tuntemattomaan järjestelmään...</span><br>
+            <span>&gt; Yhteys muodostettu: {IP}</span><br>
+            <span>&gt; Hakkerointiprosessi aloitettu...</span><br>
+            <span>&gt; Käyttäjä: tuntematon</span><br>
+            <span>&gt; Tuhoamiskoodit vastaanotettu.</span><br>
             <span>&gt; Pommi tilattu. Aika: 00:00:30</span><br>
             <span>&gt; Toimenpiteet käynnissä...</span><br>
-            <span>&gt; Virhe: Yhteys ei löydy. Yritä uudelleen.</span><br>
-            <span>&gt; Häiriö! Virheellinen komento.</span><br>
-            <span>&gt; Jatka?</span>
+            <span>&gt; Hakkeroinnin lähde: <span style="color: red;">PÄHKINÄRYHMÄ</span></span><br>
+            <span>&gt; Varoitus: Yhteys katkeaa 10 sekunnin kuluttua!</span><br>
+            <span>&gt; Yritä palauttaa yhteys.</span><br>
+            <span>&gt; Jatka (K/Y)?</span>
         </div>
     </div>
 </body>
