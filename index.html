@@ -56,7 +56,7 @@
             transform: scale(1.05);
         }
         /* Animaatio O===3:lle */
-        .animation-container {
+        .animation-container, .swing {
             margin: 20px;
             font-size: 4em;
             display: flex;
@@ -91,21 +91,21 @@
     </style>
 </head>
 <body>
-    <h1>Pähkinäryhmä O===3</h1>
-    <p>Astutko sisään, jossa hämmennys kohtaa viettelyn O===3?</p>
-    <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon... O===3</p>
+    <h1>Pähkinäryhmä <span class="swing">O===3</span></h1>
+    <p>Astutko sisään, jossa hämmennys kohtaa viettelyn? <span class="swing">O===3</span></p>
+    <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon... <span class="swing">O===3</span></p>
     
-    <button onclick="revealMystery()">Paljasta salaisuus O===3</button>
+    <button onclick="revealMystery()">Paljasta salaisuus <span class="swing">O===3</span></button>
 
     <div class="animation-container">
-        <span>O===3</span> <!-- Animoitu elementti -->
+        <span class="swing">O===3</span> <!-- Animoitu elementti -->
     </div>
 
     <div class="mysterious" id="mysteryText">
         💖 "Olet kaunis, muista että miehet ovat ilkeitä ja haluavat vain pahaa" 💖<br>
         "Löydä intohimosi naisista, koe halusi panna naisia. Tervetuloa meidän maailmaan..." 
         <br><br>
-        <span>O===3</span> <!-- Lisää animoitu elementti salaisuuden loppuun -->
+        <span class="swing">O===3</span> <!-- Lisää animoitu elementti salaisuuden loppuun -->
     </div>
 
     <script>
