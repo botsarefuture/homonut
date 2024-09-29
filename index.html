@@ -3,79 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pähkinäryhmä - Hamoja Pähkinöille</title>
+    <title>Pähkinäryhmä - Salaisuus ja Tutkimus</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f0f0f0;
-            color: #333;
             margin: 0;
             padding: 0;
-        }
-        header {
-            text-align: center;
-            background: linear-gradient(135deg, #6200ea, #bb86fc);
-            color: white;
-            padding: 100px 0;
-            border-bottom: 5px solid #03dac5;
+            background: url('https://example.com/secret-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
         }
         h1 {
-            margin: 0;
-            font-size: 4em;
-            text-shadow: 2px 2px #000;
-        }
-        .tagline {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-        .content {
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        .values {
-            margin: 30px 0;
             text-align: center;
+            font-size: 4em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            margin-top: 20vh;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        .container p {
+            font-size: 1.5em;
+            margin: 20px auto;
+            max-width: 800px;
+            opacity: 0.8;
+        }
+        nav {
+            margin-top: 50px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #03dac5;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff4081;
         }
         footer {
+            position: absolute;
+            bottom: 20px;
             text-align: center;
-            padding: 20px 0;
-            background: #6200ea;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            font-size: 0.8em;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Pähkinäryhmä</h1>
-    <p class="tagline">Hamoja Pähkinöille</p>
-</header>
-
-<div class="content">
-    <h2>Tervetuloa Pähkinäryhmään!</h2>
-    <p>Pähkinäryhmä on yhteisöprojekti, joka yhdistää LGBTQ+ -yhteisön pähkinöiden ympärille. Meidän tavoitteemme on luoda turvallinen ja kannustava ympäristö, jossa kaikki voivat jakaa kokemuksiaan ja oppia toisiltaan. Olemme sitoutuneet edistämään avoimuutta, tasa-arvoa ja yhteisöllisyyttä.</p>
-    
-    <div class="values">
-        <h3>Arvomme</h3>
-        <ul>
-            <li>Avoimuus: Kannustamme rehellisyyteen ja läpinäkyvyyteen.</li>
-            <li>Tasa-arvo: Uskomme kaikkien ihmisten tasavertaisuuteen.</li>
-            <li>Yhteisöllisyys: Rakennamme yhteisöä, joka tukee ja voimaannuttaa.</li>
-        </ul>
+    <div class="container">
+        <h1>Pähkinäryhmä</h1>
+        <p>Tervetuloa Pähkinäryhmään, salaisuuksien ja mysteerien maailmaan. Oletko valmis tutkimaan, mitä kaikkea tämä yhteisö kätkee?</p>
+        <nav>
+            <ul>
+                <li><a href="mysterio.html">Mysterio</a></li>
+                <li><a href="salaisuudet.html">Salaisuudet</a></li>
+                <li><a href="yhteiso.html">Yhteisö</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="tapahtumat.html">Tapahtumat</a></li>
+                <li><a href="taide.html">Taide</a></li>
+                <li><a href="vapaaehtoistyö.html">Vapaaehtoistyö</a></li>
+                <li><a href="blogi.html">Blogi</a></li>
+                <li><a href="ota_yhteytta.html">Ota Yhteyttä</a></li>
+                <li><a href="pahkinahaaste.html">Pähkinähaaste</a></li>
+            </ul>
+        </nav>
     </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Pähkinäryhmä. Kaikki oikeudet pidätetään.</p>
-</footer>
-
+    <footer>&copy; 2024 Pähkinäryhmä. Salaista tietoa, joka odottaa paljastumistaan.</footer>
 </body>
 </html>
