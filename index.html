@@ -6,7 +6,7 @@
     <title>Pähkinäryhmä - Seksikkyyden Taikaa</title>
     <style>
         body {
-            background-color: #1a001d; /* Tumma tausta */
+            background: linear-gradient(135deg, #1a001d, #3f003f); /* Upea taustagrafiikka */
             color: #ff1493; /* Rikas vaaleanpunainen väri */
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -16,28 +16,31 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            animation: pulse 2s infinite;
             padding: 10px;
+            overflow: hidden; /* Piilottaa ylitsevuotavat elementit */
         }
         h1 {
             font-size: 4em;
-            text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
+            text-shadow: 0 0 30px #ff1493, 0 0 60px #ff69b4;
             margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-        h2 {
-            font-size: 3em;
-            color: #ff69b4;
-            margin: 20px 0;
+            transition: transform 0.3s, color 0.3s; /* Lisää väri- ja koon animaatioita */
         }
         h1:hover {
             transform: scale(1.1);
+            color: #ff69b4; /* Vaaleampi väri hover-tilassa */
+        }
+        h2 {
+            font-size: 3em;
+            color: #fff; /* Valkoinen väri */
+            margin: 20px 0;
+            text-shadow: 0 0 20px #ff69b4; /* Tehostettu varjo */
         }
         p {
             font-size: 1.5em;
             margin: 20px 0;
             opacity: 0.9;
             animation: flicker 1s infinite;
+            text-shadow: 0 0 10px #ff69b4; /* Tehostettu varjo */
         }
         .mysterious {
             display: none;
@@ -47,22 +50,20 @@
             text-shadow: 0 0 15px #ff69b4;
         }
         button {
-            padding: 10px 20px;
-            font-size: 1.2em;
+            padding: 15px 30px;
+            font-size: 1.5em;
             background-color: #ff69b4;
             color: #000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Lisää animaatioita */
+            box-shadow: 0 0 20px #ff69b4; /* Varjo napille */
         }
         button:hover {
             background-color: #ff1493;
-            transform: scale(1.05);
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
+            transform: scale(1.1);
+            box-shadow: 0 0 30px #ff69b4; /* Eri varjo hover-tilassa */
         }
         @keyframes flicker {
             0% { opacity: 0.9; }
@@ -80,7 +81,7 @@
                 font-size: 1.2em; /* Pienempi fontti mobiilissa */
             }
             button {
-                padding: 8px 15px; /* Pienempi nappi mobiilissa */
+                padding: 10px 20px; /* Pienempi nappi mobiilissa */
             }
         }
     </style>
