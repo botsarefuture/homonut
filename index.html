@@ -6,8 +6,8 @@
     <title>Pähkinäryhmä - Seksikkyyden Taikaa</title>
     <style>
         body {
-            background: linear-gradient(135deg, #1a001d, #3f003f); /* Upea taustagrafiikka */
-            color: #ff1493; /* Rikas vaaleanpunainen väri */
+            background: linear-gradient(135deg, #1a001d, #3f003f);
+            color: #ff1493;
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
@@ -17,51 +17,57 @@
             margin: 0;
             text-align: center;
             padding: 10px;
-            overflow: hidden; /* Piilottaa ylitsevuotavat elementit */
+            overflow: hidden;
         }
         h1 {
             font-size: 4em;
             text-shadow: 0 0 30px #ff1493, 0 0 60px #ff69b4;
             margin-bottom: 20px;
-            transition: transform 0.3s, color 0.3s; /* Lisää väri- ja koon animaatioita */
+            transition: transform 0.3s, color 0.3s;
         }
         h1:hover {
             transform: scale(1.1);
-            color: #ff69b4; /* Vaaleampi väri hover-tilassa */
+            color: #ff69b4;
         }
         h2 {
             font-size: 3em;
-            color: #fff; /* Valkoinen väri */
+            color: #fff;
             margin: 20px 0;
-            text-shadow: 0 0 20px #ff69b4; /* Tehostettu varjo */
+            text-shadow: 0 0 20px #ff69b4;
         }
         p {
             font-size: 1.5em;
             margin: 20px 0;
             opacity: 0.9;
             animation: flicker 1s infinite;
-            text-shadow: 0 0 10px #ff69b4; /* Tehostettu varjo */
+            text-shadow: 0 0 10px #ff69b4;
         }
         .hashtag {
             font-size: 3em;
             color: #ff69b4;
             margin-top: 30px;
-            text-shadow: 0 0 25px #ff1493, 0 0 40px #ff69b4; /* Vaikutusvarjot */
-            animation: pulse 1.5s infinite; /* Animaatio hashtagin ympärille */
+            text-shadow: 0 0 25px #ff1493, 0 0 40px #ff69b4;
+            animation: pulse 1.5s infinite;
         }
         .women-message {
             font-size: 2.5em;
             color: #fff;
             margin-top: 20px;
-            text-shadow: 0 0 20px #ff69b4; /* Tehostettu varjo */
-            animation: fade-in 2s; /* Fade-in animaatio */
+            text-shadow: 0 0 20px #ff69b4;
+            animation: fade-in 2s;
         }
-        .mysterious {
-            display: none;
+        .anti-straight {
             font-size: 2em;
-            color: #fff;
-            margin-top: 30px;
+            color: #ff1493;
+            margin: 20px 0;
             text-shadow: 0 0 15px #ff69b4;
+            animation: bounce 1.5s infinite;
+        }
+        .murder-count {
+            font-size: 2.5em;
+            color: #ff1493;
+            margin-top: 30px;
+            text-shadow: 0 0 20px #ff69b4;
         }
         button {
             padding: 15px 30px;
@@ -71,13 +77,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s; /* Lisää animaatioita */
-            box-shadow: 0 0 20px #ff69b4; /* Varjo napille */
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 0 20px #ff69b4;
         }
         button:hover {
             background-color: #ff1493;
             transform: scale(1.1);
-            box-shadow: 0 0 30px #ff69b4; /* Eri varjo hover-tilassa */
+            box-shadow: 0 0 30px #ff69b4;
         }
         @keyframes flicker {
             0% { opacity: 0.9; }
@@ -86,30 +92,38 @@
         }
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); } /* Pulssi-efekti hashtagin ympärille */
+            50% { transform: scale(1.05); }
         }
         @keyframes fade-in {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
         @media (max-width: 600px) {
             h1 {
-                font-size: 2.5em; /* Pienempi fontti mobiilissa */
+                font-size: 2.5em;
             }
             h2 {
-                font-size: 2em; /* Pienempi fontti mobiilissa */
+                font-size: 2em;
             }
             p {
-                font-size: 1.2em; /* Pienempi fontti mobiilissa */
+                font-size: 1.2em;
             }
             button {
-                padding: 10px 20px; /* Pienempi nappi mobiilissa */
+                padding: 10px 20px;
             }
             .hashtag {
-                font-size: 2.5em; /* Pienempi fontti hashtagin mobiilissa */
+                font-size: 2.5em;
             }
             .women-message {
-                font-size: 2em; /* Pienempi fontti naisviestille mobiilissa */
+                font-size: 2em;
+            }
+            .anti-straight {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -120,9 +134,13 @@
     <p>Astutko sisään, jossa hämmennys kohtaa viettelyn?</p>
     <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
     
-    <div class="hashtag">#HeterotAlas</div> <!-- Vaikuttava hashtag -->
+    <div class="hashtag">#HeterotAlas</div>
     
-    <div class="women-message">Naiset ovat vain naisia varten.</div> <!-- Naisviesti -->
+    <div class="women-message">Naiset ovat vain naisia varten.</div>
+    
+    <div class="anti-straight">Heteroiden maailma on rajoittava. Vapaus on naisten välinen! 🌈</div>
+
+    <div class="murder-count" id="murderCount">Heteroita murhattu: 300000</div> <!-- Alkuperäinen murhien määrä -->
 
     <button onclick="revealMystery()">Paljasta salaisuus</button>
 
@@ -132,6 +150,19 @@
     </div>
 
     <script>
+        let murderCount = 300000; // Alkuperäinen murhien määrä
+        const increment = 300; // Lisää 300 murhaa
+        const interval = 60000; // 60 sekuntia
+
+        // Päivittää murhien määrää
+        function updateMurderCount() {
+            murderCount += increment;
+            document.getElementById('murderCount').innerText = 'Heteroita murhattu: ' + murderCount;
+        }
+
+        // Aloita päivitys, joka minuutti
+        setInterval(updateMurderCount, interval);
+
         function revealMystery() {
             const mysteryText = document.getElementById('mysteryText');
             mysteryText.style.display = 'block';
