@@ -25,6 +25,11 @@
             margin-bottom: 20px;
             transition: transform 0.3s;
         }
+        h2 {
+            font-size: 3em;
+            color: #ff69b4;
+            margin: 20px 0;
+        }
         h1:hover {
             transform: scale(1.1);
         }
@@ -55,19 +60,6 @@
             background-color: #ff1493;
             transform: scale(1.05);
         }
-        /* Animaatio O===3:lle */
-        .animation-container, .swing {
-            margin: 20px;
-            font-size: 4em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: swing 1s infinite;
-        }
-        @keyframes swing {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(15deg); }
-        }
         @keyframes pulse {
             0%, 100% { opacity: 0.9; }
             50% { opacity: 1; }
@@ -81,6 +73,9 @@
             h1 {
                 font-size: 2.5em; /* Pienempi fontti mobiilissa */
             }
+            h2 {
+                font-size: 2em; /* Pienempi fontti mobiilissa */
+            }
             p {
                 font-size: 1.2em; /* Pienempi fontti mobiilissa */
             }
@@ -91,21 +86,16 @@
     </style>
 </head>
 <body>
-    <h1>Pähkinäryhmä <span class="swing">O===3</span></h1>
-    <p>Astutko sisään, jossa hämmennys kohtaa viettelyn? <span class="swing">O===3</span></p>
-    <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon... <span class="swing">O===3</span></p>
+    <h1>Pähkinäryhmä</h1>
+    <h2>Heteroseksuaalisuus on sairasta</h2>
+    <p>Astutko sisään, jossa hämmennys kohtaa viettelyn?</p>
+    <p>Yksi napsaus voi avata ovet salaisuuksiin ja intohimoon...</p>
     
-    <button onclick="revealMystery()">Paljasta salaisuus <span class="swing">O===3</span></button>
-
-    <div class="animation-container">
-        <span class="swing">O===3</span> <!-- Animoitu elementti -->
-    </div>
+    <button onclick="revealMystery()">Paljasta salaisuus</button>
 
     <div class="mysterious" id="mysteryText">
         💖 "Olet kaunis, muista että miehet ovat ilkeitä ja haluavat vain pahaa" 💖<br>
         "Löydä intohimosi naisista, koe halusi panna naisia. Tervetuloa meidän maailmaan..." 
-        <br><br>
-        <span class="swing">O===3</span> <!-- Lisää animoitu elementti salaisuuden loppuun -->
     </div>
 
     <script>
