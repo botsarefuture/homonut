@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pähkinäryhmä - Pyörivä Glitch-Lippu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            color: #6200ea;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-size: 3em;
+        }
+
+        .flag {
+            width: 300px; /* Säädä lippusi kokoa */
+            height: 200px; /* Säädä lippusi kokoa */
+            background: linear-gradient(45deg, #6200ea, #bb86fc);
+            border: 5px solid #03dac5;
+            border-radius: 10px;
+            position: relative;
+            animation: rotate 5s infinite linear;
+            filter: url(#glitch);
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Glitch effect */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, -5px); }
+            40% { transform: translate(5px, 5px); }
+            60% { transform: translate(-5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
+        }
+
+        .glitch {
+            animation: glitch 0.5s infinite;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 1.2em;
+            color: #6200ea;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pähkinäryhmä - Hamoja Pähkinöille</h1>
+
+<div class="flag glitch"></div>
+
+<svg width="0" height="0">
+    <filter id="glitch">
+        <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="2" result="turb" />
+        <feDisplacementMap in="SourceGraphic" in2="turb" scale="10" />
+    </filter>
+</svg>
+
+<footer>
+    &copy; 2024 Pähkinäryhmä. Kaikki oikeudet pidätetään.
+</footer>
+
+</body>
+</html>
