@@ -3,82 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pähkinäryhmä - Salaisuus ja Tutkimus</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Pähkinäryhmä - Häiriö</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url('https://example.com/secret-background.jpg') no-repeat center center fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://example.com/dark-background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
+            color: #00ff00; /* Neonvihreä väri */
             font-family: 'Courier New', Courier, monospace;
+            text-align: center;
             overflow: hidden;
         }
         h1 {
-            text-align: center;
-            font-size: 4em;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-            margin-top: 20vh;
+            font-size: 6em;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            animation: flicker 1.5s infinite alternate;
         }
-        .container {
-            text-align: center;
-            position: relative;
-        }
-        .container p {
+        p {
             font-size: 1.5em;
-            margin: 20px auto;
-            max-width: 800px;
+            max-width: 600px;
             opacity: 0.8;
+            margin-top: 20px;
+            animation: fadeIn 2s;
         }
-        nav {
-            margin-top: 50px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-        nav a {
-            color: #03dac5;
-            text-decoration: none;
+        .warning {
+            color: red;
             font-weight: bold;
-            transition: color 0.3s;
+            animation: pulse 2s infinite alternate;
+            margin-top: 30px;
         }
-        nav a:hover {
-            color: #ff4081;
+        @keyframes flicker {
+            0% { opacity: 0.9; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
         }
-        footer {
-            position: absolute;
-            bottom: 20px;
-            text-align: center;
-            font-size: 0.8em;
-            color: #aaa;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.8; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .terminal {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            padding: 20px;
+            margin-top: 30px;
+            white-space: pre;
+            overflow: hidden;
+            animation: fadeIn 3s;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Pähkinäryhmä</h1>
-        <p>Tervetuloa Pähkinäryhmään, salaisuuksien ja mysteerien maailmaan. Oletko valmis tutkimaan, mitä kaikkea tämä yhteisö kätkee?</p>
-        <nav>
-            <ul>
-                <li><a href="mysterio.html">Mysterio</a></li>
-                <li><a href="salaisuudet.html">Salaisuudet</a></li>
-                <li><a href="yhteiso.html">Yhteisö</a></li>
-                <li><a href="historia.html">Historia</a></li>
-                <li><a href="tapahtumat.html">Tapahtumat</a></li>
-                <li><a href="taide.html">Taide</a></li>
-                <li><a href="vapaaehtoistyö.html">Vapaaehtoistyö</a></li>
-                <li><a href="blogi.html">Blogi</a></li>
-                <li><a href="ota_yhteytta.html">Ota Yhteyttä</a></li>
-                <li><a href="pahkinahaaste.html">Pähkinähaaste</a></li>
-            </ul>
-        </nav>
+    <div>
+        <h1>HUPS!</h1>
+        <p>Et ole täällä oikein.</p>
+        <p>Olet tullut salaisuuksiimme, ja on jo liian myöhäistä paeta.</p>
+        <div class="warning">VAROITUS: Tietosi ovat vaarassa!</div>
+        <div class="terminal">
+            <span>&gt; Yhteys keskeytetty...</span><br>
+            <span>&gt; Hakkerointi aloitettu...</span><br>
+            <span>&gt; Tuhoamiskoodit: {IP}  127.0.0.1</span><br>
+            <span>&gt; Pommi tilattu. Aika: 00:00:30</span><br>
+            <span>&gt; Toimenpiteet käynnissä...</span><br>
+            <span>&gt; Virhe: Yhteys ei löydy. Yritä uudelleen.</span><br>
+            <span>&gt; Häiriö! Virheellinen komento.</span><br>
+            <span>&gt; Jatka?</span>
+        </div>
     </div>
-    <footer>&copy; 2024 Pähkinäryhmä. Salaista tietoa, joka odottaa paljastumistaan.</footer>
 </body>
 </html>
