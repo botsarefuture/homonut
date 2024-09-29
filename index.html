@@ -3,121 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pähkinäryhmä - Salaisuudet</title>
+    <title>Agentti Keskustelu</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url('https://example.com/dark-background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #00ff00; /* Neonvihreä väri */
+            background-color: black;
+            color: #00ff00; /* Vihreä väri */
             font-family: 'Courier New', Courier, monospace;
-            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+            height: 100vh;
             overflow: hidden;
         }
         h1 {
-            font-size: 5em;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-            animation: flicker 1.5s infinite alternate;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
         }
-        p {
-            font-size: 1.5em;
-            max-width: 600px;
-            opacity: 0.8;
-            margin-top: 20px;
-            animation: fadeIn 2s;
+        .console {
+            height: 70vh;
+            overflow-y: auto;
+            border: 2px solid #00ff00;
+            padding: 10px;
+            background-color: #1e1e1e;
         }
-        .warning {
-            color: red;
-            font-weight: bold;
-            animation: pulse 2s infinite alternate;
-            margin-top: 30px;
+        .input-line {
+            display: flex;
+            margin-top: 10px;
         }
-        .terminal {
-            font-family: 'Courier New', Courier, monospace;
-            background: rgba(0, 0, 0, 0.7);
+        .input-line input {
+            flex: 1;
+            background: black;
+            color: #00ff00;
             border: 1px solid #00ff00;
-            padding: 20px;
-            margin-top: 30px;
-            white-space: pre;
-            overflow: hidden;
-            animation: fadeIn 3s;
-            text-align: left;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 5px;
+            font-family: inherit;
         }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #00ff00;
+        .input-line button {
+            padding: 5px 10px;
+            background: #00ff00;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #008800;
-        }
-        @keyframes flicker {
-            0% { opacity: 0.9; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 0.8; }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            color: black;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>HUPS!</h1>
-        <p>Olet nyt salaisella alueella, josta et olisi koskaan pitänyt löytää.</p>
-        <p>Tiedot ja turvallisuus ovat uhattuina. Ole varovainen, mitä teet seuraavaksi.</p>
-        <div class="warning">VAROITUS: Järjestelmä on murrettu!</div>
-        <div class="terminal" id="terminal">
-            <span>&gt; Tervetuloa tuntemattomaan järjestelmään...</span><br>
-            <span>&gt; Yhteys muodostettu: {IP}</span><br>
-            <span>&gt; Hakkerointiprosessi aloitettu...</span><br>
-            <span>&gt; Käyttäjä: tuntematon</span><br>
-            <span>&gt; Tuhoamiskoodit vastaanotettu.</span><br>
-            <span>&gt; Pommi tilattu. Aika: 00:00:30</span><br>
-            <span>&gt; Toimenpiteet käynnissä...</span><br>
-            <span>&gt; Hakkeroinnin lähde: <span style="color: red;">PÄHKINÄRYHMÄ</span></span><br>
-            <span>&gt; Varoitus: Yhteys katkeaa 10 sekunnin kuluttua!</span><br>
-            <span>&gt; Yritä palauttaa yhteys.</span><br>
-            <span>&gt; Jatka (K/Y)?</span>
-        </div>
-        <button id="responseButton">Vastaa</button>
-        <div id="response" style="display: none; margin-top: 20px; color: yellow;"></div>
+    <h1>Agentti Keskustelu - Salaista Viestintää</h1>
+    <div class="console" id="console">
+        <div>Yhteys muodostettu. Tervetuloa agentti. Syötä komento:</div>
     </div>
-    <script>
-        document.getElementById('responseButton').onclick = function() {
-            const responseDiv = document.getElementById('response');
-            const terminal = document.getElementById('terminal');
-            responseDiv.style.display = 'block';
+    <div class="input-line">
+        <input type="text" id="commandInput" placeholder="Kirjoita komento...">
+        <button onclick="executeCommand()">Suorita</button>
+    </div>
 
-            // Simuloidaan eri vastauksia
-            const userResponse = Math.random() < 0.5 ? 'K' : 'Y';
-            if (userResponse === 'K') {
-                terminal.innerHTML = '<span>&gt; Yhteys palautettu...</span><br>' +
-                                        '<span>&gt; Toimenpiteet keskeytetty. Onko tämä vain aluksi?</span>';
-                terminal.innerHTML += '<br><span>&gt; Jatka (K/Y)?</span>';
-            } else {
-                terminal.innerHTML = '<span>&gt; Yhteys katkaistu...</span><br>' +
-                                        '<span>&gt; Häiriö! Virheellinen komento. Pelasta itsesi!</span>';
-            }
-        };
+    <script>
+        function executeCommand() {
+            const input = document.getElementById('commandInput');
+            const consoleDiv = document.getElementById('console');
+            const command = input.value;
+            input.value = '';
+
+            if (command.trim() === '') return;
+
+            const response = simulateCommand(command);
+            consoleDiv.innerHTML += `<div>> ${command}</div>`;
+            consoleDiv.innerHTML += `<div>${response}</div>`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight; // Skrollaa alas
+        }
+
+        function simulateCommand(command) {
+            const commands = {
+                'status': 'Agentti on valmiina. Kaikki järjestelmät toimivat.',
+                'target': 'Tavoite on havaittu: Koodinimi "Pähkinä".',
+                'execute': 'Toiminto käynnistetty. Aika loppuu.',
+                'help': 'Käytettävissä olevat komennot: status, target, execute, help.',
+                'shutdown': 'Yhteys katkaistu. Olet nyt offline.',
+            };
+
+            return commands[command] || 'Tuntematon komento. Käytä "help" nähdäksesi komennot.';
+        }
     </script>
 </body>
 </html>
